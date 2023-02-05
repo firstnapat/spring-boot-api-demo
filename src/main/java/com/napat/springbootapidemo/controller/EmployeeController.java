@@ -2,6 +2,7 @@ package com.napat.springbootapidemo.controller;
 
 import com.napat.springbootapidemo.model.Employee;
 import com.napat.springbootapidemo.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -10,7 +11,14 @@ import java.util.List;
 @RestController
 public class EmployeeController {
 
-    EmployeeService employeeService = new EmployeeService();
+    // Autowired คือการ inject ของอัตโนมัติ
+    // @Autowired
+
+    // 4. create constructor แทนที่จะใช้ autowired
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
+    EmployeeService employeeService;
 
     @GetMapping("/employees")
     public List<Employee> listEmployee() {

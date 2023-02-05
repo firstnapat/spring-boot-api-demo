@@ -5,6 +5,19 @@ public class Employee {
     String firstName;
     String lastName;
 
+    Department department;
+
+    public Employee() {
+
+    }
+
+    // 3. ทำให้เป็น constructor แล้วส่งค่าแบบ public
+    public Employee(Department department) {
+        this.department = department;
+    }
+
+
+
     public Integer getId() {
         return id;
     }
@@ -27,5 +40,13 @@ public class Employee {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }
