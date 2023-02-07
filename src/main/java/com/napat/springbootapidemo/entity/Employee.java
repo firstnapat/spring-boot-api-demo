@@ -1,8 +1,21 @@
-package com.napat.springbootapidemo.model;
+package com.napat.springbootapidemo.entity;
 
+import com.napat.springbootapidemo.model.Department;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "EMPLOYEE")
 public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     Integer id;
+
+    @Column(name = "FIRST_NAME")
     String firstName;
+
+    @Column(name = "LAST_NAME")
     String lastName;
 
     Department department;

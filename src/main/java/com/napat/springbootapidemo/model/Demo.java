@@ -1,5 +1,7 @@
 package com.napat.springbootapidemo.model;
 
+import com.napat.springbootapidemo.entity.Employee;
+
 public class Demo {
     public static void main(String[] args) {
 
